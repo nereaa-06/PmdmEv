@@ -1,6 +1,8 @@
 package com.example.ud_4_prctica_ev
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,10 +19,12 @@ import coil.request.ImageRequest
 @Composable
 fun CatalogoScreen(navController: NavHostController) {
     val context = LocalContext.current
+    // Usamos Scroll para asegurar que todo se vea
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState()), // Añade esto
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(15.dp)
     ) {
@@ -33,53 +37,37 @@ fun CatalogoScreen(navController: NavHostController) {
             modifier = Modifier.size(200.dp)
         )
 
-        // 3. BOTONES DE NAVEGACIÓN
-        Button(
-            onClick = { navController.navigate("audio") },
-            modifier = Modifier.fillMaxWidth()
-        ) {
+        // 3. BOTONES
+        Button(onClick = { navController.navigate("audio") }, modifier = Modifier.fillMaxWidth()) {
             Text("Escuchar Audio")
         }
 
-        Button(
-            onClick = { navController.navigate("video") },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Ver Vídeo ")
+        Button(onClick = { navController.navigate("video") }, modifier = Modifier.fillMaxWidth()) {
+            Text("Ver Vídeo")
         }
 
         // 2. IMAGEN REMOTA
         AsyncImage(
-                model = ImageRequest.Builder(context)
-                    .data("https://lumiere-a.akamaihd.net/v1/images/image_8ac3fa97.jpeg?region=0%2C0%2C540%2C810")
-                    .crossfade(true)
-                    .build(),
-                placeholder = painterResource(R.drawable.placeholder),
-                error = painterResource(R.drawable.error),
-                contentDescription = "Imagen descargada desde Internet",
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp),
-                contentScale = ContentScale.Crop
+            model = ImageRequest.Builder(context)
+                .data("https://static.wikia.nocookie.net/sherlockholmes/images/b/b8/Sherlock_Holmes_%28Cumberbatch%29.png/revision/latest/scale-to-width-down/369?cb=20140114144605&path-prefix=es")
+                .crossfade(true)
+                .build(),
+            placeholder = painterResource(R.drawable.placeholder),
+            error = painterResource(R.drawable.error),
+            contentDescription = "Imagen remota",
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp),
+            contentScale = ContentScale.Fit
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
-
-        // 3. BOTONES DE NAVEGACIÓN
-        Button(
-            onClick = { navController.navigate("audio") },
-            modifier = Modifier.fillMaxWidth()
-        ) {
+        // 3. BOTONES
+        Button(onClick = { navController.navigate("audio") }, modifier = Modifier.fillMaxWidth()) {
             Text("Escuchar Audio")
         }
 
-        Button(
-            onClick = { navController.navigate("video") },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Ver Vídeo ")
+        Button(onClick = { navController.navigate("video") }, modifier = Modifier.fillMaxWidth()) {
+            Text("Ver Vídeo")
         }
-
-
     }
 }

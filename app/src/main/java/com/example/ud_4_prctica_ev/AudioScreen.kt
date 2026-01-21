@@ -27,6 +27,7 @@ fun AudioScreen(navController: NavHostController) {
         MediaPlayer.create(context, R.raw.audio_alicia)
     }
 
+
     DisposableEffect(Unit) {
         onDispose {
             // Si está sonando, lo paramos y liberamos recursos
@@ -48,7 +49,7 @@ fun AudioScreen(navController: NavHostController) {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text(
-            text = "Práctica 2 Audio",
+            text = "Audio",
             style = MaterialTheme.typography.titleLarge
         )
 
