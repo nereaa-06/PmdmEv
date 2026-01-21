@@ -31,14 +31,20 @@ class MainActivity : ComponentActivity() {
                         CatalogoScreen(navController)
                     }
 
-                    // Ruta para tu pantalla de Audio
-                    composable("audio") {
+                    // --- RUTAS PARA EL LIBRO 1
+                    composable("audio1") {
                         AudioScreen(navController)
                     }
-
-                    // Ruta para tu pantalla de Vídeo
-                    composable("video") {
+                    composable("video1") {
                         VideoScreen(navController)
+                    }
+
+                    // --- RUTAS PARA EL LIBRO 2
+                    composable("audio2") {
+                        AudioScreen2(navController)
+                    }
+                    composable("video2") {
+                        VideoScreen2(navController)
                     }
                 }
             }

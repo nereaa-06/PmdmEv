@@ -2,6 +2,7 @@ package com.example.ud_4_prctica_ev
 
 
 
+
 import android.media.MediaPlayer
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,11 +21,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @Composable
-fun AudioScreen(navController: NavHostController) {
+fun AudioScreen2(navController: NavHostController) {
     val context = LocalContext.current
 
     val player = remember {
-        MediaPlayer.create(context, R.raw.audio_alicia)
+        MediaPlayer.create(context, R.raw.memorias_sherlock)
     }
 
 

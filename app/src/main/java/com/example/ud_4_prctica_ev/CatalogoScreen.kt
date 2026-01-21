@@ -38,13 +38,14 @@ fun CatalogoScreen(navController: NavHostController) {
         )
 
         // 3. BOTONES
-        Button(onClick = { navController.navigate("audio") }, modifier = Modifier.fillMaxWidth()) {
+        Button(onClick = { navController.navigate("audio1") }) {
             Text("Escuchar Audio")
         }
 
-        Button(onClick = { navController.navigate("video") }, modifier = Modifier.fillMaxWidth()) {
+        Button(onClick = { navController.navigate("video1") }) {
             Text("Ver Vídeo")
         }
+        Spacer(modifier = Modifier.height(20.dp))
 
         // 2. IMAGEN REMOTA
         AsyncImage(
@@ -62,11 +63,10 @@ fun CatalogoScreen(navController: NavHostController) {
         )
 
         // 3. BOTONES
-        Button(onClick = { navController.navigate("audio") }, modifier = Modifier.fillMaxWidth()) {
+        Button(onClick = { navController.navigate("audio2") }) {
             Text("Escuchar Audio")
         }
-
-        Button(onClick = { navController.navigate("video") }, modifier = Modifier.fillMaxWidth()) {
+        Button(onClick = { navController.navigate("video2") }) {
             Text("Ver Vídeo")
         }
     }
