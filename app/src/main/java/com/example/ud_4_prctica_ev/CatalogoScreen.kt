@@ -69,5 +69,6 @@ fun CatalogoScreen(navController: NavHostController) {
         Button(onClick = { navController.navigate("video2") }) {
             Text("Ver Vídeo")
         }
+        Spacer(modifier = Modifier.height(50.dp))
     }
 }
